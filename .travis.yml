@@ -10,8 +10,9 @@ addons:
   apt:
     packages:
     - python-pip
-    - php5
 
+before_install:
+  - sudo apt-get -y install php5 php5-dev
 install:
   # Install ansible
   - pip install ansible==2.1.0
