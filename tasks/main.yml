@@ -3,6 +3,7 @@
 
 - name: Move composer to /usr/local/bin/
   shell: mv composer.phar /usr/local/bin/composer
+  become: yes
 
 - name: Update Composer
   shell: cd {{ item }} && /usr/local/bin/composer config -g github-oauth.github.com {{ github_oauth_key }} && /usr/local/bin/composer -n update
