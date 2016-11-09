@@ -6,6 +6,5 @@
   become: yes
 
 - name: Update Composer
-  shell: cd {{ item }} && /usr/local/bin/composer config -g github-oauth.github.com {{ github_oauth_key }} && /usr/local/bin/composer -n update
-  with_items: composer_directories
+  shell: /usr/local/bin/composer config -g github-oauth.github.com {{ github_oauth_key }} && /usr/local/bin/composer -n update
   when: "{{ configure_composer_key | bool }}"
