@@ -1,0 +1,10 @@
+- name: Get composer
+  shell: curl -sS https://getcomposer.org/installer | php
+
+- name: Move composer to /usr/local/bin/
+  shell: mv composer.phar /usr/local/bin/composer
+
+- name: Update Composer
+  shell: cd {{ item }} && /usr/local/bin/composer config -g github-oauth.github.com {{ github_oauth_key }} && /usr/local/bin/composer -n update
+  with_items: composer_directories
+  when: "{{ configure_composer_key | bool }}"
