@@ -6,5 +6,5 @@
   become: yes
 
 - name: Update Composer
-  shell: /usr/local/bin/composer config -g github-oauth.github.com {{ github_oauth_key }} && /usr/local/bin/composer -n update
+  shell: /usr/local/bin/composer config -g github-oauth.github.com {{ github_oauth_key }} 
   when: "{{ configure_composer_key | bool }}"
