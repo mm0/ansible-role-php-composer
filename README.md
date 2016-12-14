@@ -1,45 +1,52 @@
-# README.md
+Ansible Role: PHP Composer
+===
 
-# Ansible Role: PHP Composer
+[![Build Status](https://travis-ci.org/mm0/ansible-role-php-composer.svg?branch=master)](https://travis-ci.org/mm0/ansible-role-php-composer)
 
 An Ansible role that installs and configures PHP Composer
 
 
-![travis-ci](https://travis-ci.org/mm0/ansible-role-php-composer.svg?branch=master)
-
-## Requirements
+Requirements
+--
 
 PHP
 
-## Role Variables
+Role Variables
+---
 
 Available variables are listed below, there are no defaults:
 
-    configure_composer_key: false # whether to setup a github oauth token
+```yml
+configure_composer_key: false # whether to setup a github oauth token
 
-    github_oauth_key: 123 # oauth token to use 
+github_oauth_key: 123 # oauth token to use 
+```
 
-
-## Dependencies
+Dependencies
+---
 
 None 
 
-## Example Playbook
+Example Playbook
+---
 
-    - hosts: webservers
-      vars:
-      - { role: ansible-role-php-composer,
-          configure_composer_key: true,
-          github_oauth_key: 123
-        }
+```yml
+- hosts: webservers
+  vars:
+  - { role: ansible-role-php-composer,
+      configure_composer_key: true,
+      github_oauth_key: 123
+    }
+```
 
-## License
+License
+---------------
 
-MIT
+BSD-2
 
 Author Information
 ------------------
 
 [Matt Margolin](mailto:matt.margolin@gmail.com)
 
-mm0 on github
+[mm0](https://github.com/mm0) on github
